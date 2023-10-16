@@ -64,13 +64,13 @@
                         <!-- NavBar Secciones Inicio -->
 
                         <li><a runat="server" href="~/">Inicio</a></li>
-                        <li><a runat="server" href="~/About">Acerca de la Diabetes</a></li>
+                        <li><a runat="server" href="~/About">Sobre la Diabetes</a></li>
                         <li><a runat="server" href="~/Health">Salud y Bienestar</a></li>
                         <li><a runat="server" href="~/Contact">Nosotros</a></li>
                         <li class="dropdown">
-                            <a class="drodown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+                            <a class="drodown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cuenta <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a runat="server" href="~/Login">Acceder</a></li>
+                                <li><a runat="server" href="~/Login">Iniciar sesión</a></li>
                                 <li><a runat="server" href="~/SignUp">Registrarse</a></li>
                             </ul>
                         </li>
