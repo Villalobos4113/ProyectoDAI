@@ -70,8 +70,8 @@
                         <li class="dropdown">
                             <a class="drodown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cuenta <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a runat="server" href="~/Login">Iniciar sesión</a></li>
-                                <li><a runat="server" href="~/SignUp">Registrarse</a></li>
+                                <li><a runat="server" href="~/Auth/Login">Iniciar sesión</a></li>
+                                <li><a runat="server" href="~/Auth/SignUp">Registrarse</a></li>
                             </ul>
                         </li>
 

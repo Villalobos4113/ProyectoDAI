@@ -5,8 +5,8 @@
         <h1>Dia Well APP</h1>
         <p class="lead">Inicia sesión o crea una cuenta para empezar a gestionar tu diabetes de manera más sencilla con nuestra aplicación.</p>
         <p>
-            <a href="/Login" class="btn btn-primary btn-lg">Iniciar sesión &raquo;</a>
-            <a href="/SignUp" class="btn btn-primary btn-lg">Registrarse &raquo;</a>
+            <a href="/Auth/Login" class="btn btn-primary btn-lg">Iniciar sesión &raquo;</a>
+            <a href="/Auth/SignUp" class="btn btn-primary btn-lg">Registrarse &raquo;</a>
         </p>
     </div>
 
