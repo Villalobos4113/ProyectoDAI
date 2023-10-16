@@ -39,6 +39,8 @@
             </Scripts>
         </asp:ScriptManager>
 
+        <!-- NavBar Inicio -->
+
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -47,26 +49,57 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+
+                    <!-- NavBar Imagen Inicio -->
+
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/">
                         <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/full-logo.png" CssClass="navbar-brand" />
                     </asp:HyperLink>
+
+                    <!-- NavBar Imagen Fin -->
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <!-- NavBar Secciones Inicio -->
+
                         <li><a runat="server" href="~/">Inicio</a></li>
                         <li><a runat="server" href="~/About">Acerca de</a></li>
                         <li><a runat="server" href="~/Contact">Contacto</a></li>
+                        <li class="dropdown">
+                            <a class="drodown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="~/Login">Login</a></li>
+                                <li><a runat="server" href="~/SignUp">Sign Up</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- NavBar Secciones Fin -->
+
                     </ul>
                 </div>
             </div>
         </div>
+
+        <!-- NavBar Secciones Fin -->
+
         <div class="container body-content">
+
+            <!-- Site.Master MainContent Inicio -->
+
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
+
+            <!-- Site.Master MainContent Fin -->
+
+            <!-- Footer Inicio -->
+
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
+                <p>Copyright &copy; <%: DateTime.Now.Year %> Dia Well. All rights reserved.</p>
             </footer>
+
+            <!-- Footer Fin -->
         </div>
 
     </form>
