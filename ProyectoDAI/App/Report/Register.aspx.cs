@@ -20,6 +20,7 @@ namespace ProyectoDAI.App.Report
         protected void Page_Load(object sender, EventArgs e)
         {
             Set_ddlTime();
+            Set_ddlMedication();
         }
 
         protected void SaveData_Click(object sender, EventArgs e)
@@ -81,20 +82,25 @@ namespace ProyectoDAI.App.Report
                 lblError.Text = "Error al crear el informe.";
                 lblError.Visible = true;
             }
+
+            if (verif)
+            {
+                Response.Redirect("/App/Report/Register");
+            }
         }
 
         protected void Set_ddlTime()
         {
             if (ddlTime.Items.Count == 0)
             {
-                // SQL query to retrieve gender data
+                // SQL query to retrieve part_of_day data
                 string query = "SELECT * FROM PartsOfDay";
 
                 OdbcConnection con = new ConnectionDB().con;
                 OdbcCommand command = new OdbcCommand(query, con);
                 OdbcDataReader reader = command.ExecuteReader();
 
-                // Populate the gender dropdown list from the database
+                // Populate the time dropdown list from the database
                 ddlTime.DataSource = reader;
                 ddlTime.DataTextField = "part_of_day";
                 ddlTime.DataValueField = "id";
@@ -102,8 +108,38 @@ namespace ProyectoDAI.App.Report
 
                 con.Close();
 
-                // Add a default "Sexo" item at the beginning of the dropdown list
+                // Add a default "Selecciona una hora" item at the beginning of the dropdown list
                 ddlTime.Items.Insert(0, new ListItem("Selecciona una hora", ""));
+            }
+        }
+
+        protected void Set_ddlMedication()
+        {
+            if (ddlMedication.Items.Count == 0)
+            {
+                // SQL query to retrieve medicine data
+                string query = "SELECT UserMedicine.medicine_id, UserMedicine.quantity, Medicine.name FROM UserMedicine INNER JOIN Medicine ON UserMedicine.medicine_id = Medicine.id WHERE UserMedicine.user_id = ?";
+
+                OdbcConnection con = new ConnectionDB().con;
+                OdbcCommand command = new OdbcCommand(query, con);
+
+                command.Parameters.AddWithValue("id", Session["user_id"]);
+
+                OdbcDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    // Populate the medicine dropdown list from the database
+                    ddlMedication.DataSource = reader;
+                    ddlMedication.DataTextField = "name";
+                    ddlMedication.DataValueField = "medicine_id";
+                    ddlMedication.DataBind();
+                }
+
+                con.Close();
+
+                // Add a default "Selecciona una medicina" item at the beginning of the dropdown list
+                ddlMedication.Items.Insert(0, new ListItem("Selecciona una medicina", ""));
             }
         }
     }

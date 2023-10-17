@@ -82,9 +82,7 @@
                         <div class="medicationEntry">
 
                             <!-- Dropdown list for selecting a medication -->
-                            <asp:DropDownList ID="ddlMedication" runat="server" CssClass="form-control">
-                                <asp:ListItem Text="Selecciona un Medicamento" Value="" />
-                            </asp:DropDownList>
+                            <asp:DropDownList ID="ddlMedication" runat="server" CssClass="form-control"></asp:DropDownList>
 
                             <!-- Input for quantity -->
                             <asp:TextBox TextMode="Number" CssClass="form-control" placeholder="Cantidad" runat="server"></asp:TextBox>
