@@ -29,3 +29,9 @@ Para garantizar una colaboración fluida y prevenir cualquier conflicto, por fav
 **Nota**: Nunca hagas merge de tu propio pull request, el propietario del código (code owner) se encargará de eso.
 
 Al seguir este flujo de trabajo, deberíamos poder evitar conflictos y trabajar juntos de manera más efectiva. ¡Feliz codificación!
+
+## Conectar a la Base de Datos
+
+1. **Copia los archivos de configuración de ejemplo:**: En el directorio del proyecto, encontrarás los archivos `Web.config.example`, `Web.Debug.config.example`, y `Web.Release.config.example`. Crea copias de estos archivos eliminando el sufijo '.example', de modo que se llamen: `Web.config`, `Web.Debug.config`, y `Web.Release.config`.
+
+2. **Modifica el archivo Web.config**: Abre el archivo `Web.config` en un editor de texto o en tu entorno de desarrollo. Dentro del tag `<connectionStrings></connectionStrings>`, encontrarás un elemento `<add>` con el nombre "DefaultConnection." Reemplaza los marcadores de posición en el atributo `connectionString` con los datos correctos proporcionados para la conexión a la base de datos. Asegúrate de mantener el formato correcto.
