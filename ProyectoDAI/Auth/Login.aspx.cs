@@ -9,6 +9,19 @@ namespace ProyectoDAI.Auth
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // ==============================================
+            // ==================WARNING=====================
+            // ==============================================
+
+            // Delete before deploying
+            Session.Add("user_id", 1);
+            Session.Add("user_first_name", "Dev");
+            Session.Add("user_last_name", "Dev");
+
+            // ==============================================
+            // ==================WARNING=====================
+            // ==============================================
+
             // Check if the user is already logged in; if yes, redirect to the App
             if (Session["user_id"] != null && Session["user_first_name"] != null && Session["user_last_name"] != null)
             {
