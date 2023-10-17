@@ -17,7 +17,7 @@
                 El Camino hacia la Comprensión de la Diabetes Comienza Aquí. No importa en qué etapa te encuentres en tu viaje, aquí es donde debes estar.
             </p>
             <p>
-                <a class="btn btn-default" href="~/About">Más información &raquo;</a>
+                <a class="btn btn-default" href="/About">Más información &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">
@@ -26,7 +26,7 @@
                 Tú Puedes Gestionar y Prosperar con la Diabetes. Un diagnóstico de diabetes no te define. Tenemos los recursos que necesitas para vivir una vida saludable.
             </p>
             <p>
-                <a class="btn btn-default" href="~/Health">Más información &raquo;</a>
+                <a class="btn btn-default" href="/Health">Más información &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">
@@ -35,7 +35,7 @@
                 Conoce al Equipo detrás del Proyecto. En Dia Well, te invitamos a conocer al equipo que está comprometido a ayudarte a llevar un control efectivo de tu diabetes.
             </p>
             <p>
-                <a class="btn btn-default" href="~/Contact">Conócenos &raquo;</a>
+                <a class="btn btn-default" href="/Contact">Conócenos &raquo;</a>
             </p>
         </div>
     </div>
