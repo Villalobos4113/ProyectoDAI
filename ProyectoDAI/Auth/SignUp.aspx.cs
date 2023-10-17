@@ -16,7 +16,22 @@ namespace ProyectoDAI.Auth
 
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/App/");
+            string firstName = txtFirstName.Text;
+            string lastName = txtLastName.Text;
+            string email = txtNewEmail.Text;
+            string password = txtNewPassword.Text;
+            string confirmPassword = txtConfirmPassword.Text;
+
+            if (password == confirmPassword)
+            {
+                Response.Redirect("~/App/");
+            }
+            else
+            {
+                lblPasswordMismatchError.Text = "Passwords do not match. Please make sure both passwords match.";
+                lblPasswordMismatchError.Visible = true;
+            }
+            
         }
     }
 }

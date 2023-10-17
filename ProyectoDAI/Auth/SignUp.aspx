@@ -24,7 +24,11 @@
                     <asp:ListItem Text="Otro" Value="Other" />
                 </asp:DropDownList>
                 <br />
-                <asp:Button ID="btnSignUp" runat="server" Text="Crear Cuenta" CssClass="btn btn-primary" OnClick="btnSignUp_Click" />
+                <div class="error-message-container">
+                    <asp:Label ID="lblPasswordMismatchError" runat="server" CssClass="text-danger" Visible="false"></asp:Label>
+                    <br />
+                    <asp:Button ID="btnSignUp" runat="server" Text="Crear Cuenta" CssClass="btn btn-primary" OnClick="btnSignUp_Click" />
+                </div>
                 <br /><br />
                 <p>¿Ya tienes una cuenta? <asp:HyperLink NavigateUrl="~/Auth/Login.aspx" Text="Inicia Sesión" runat="server" /></p>
             </div>
