@@ -8,22 +8,22 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Date</th>
-                    <th>Type</th>
-                    <th>Before Breakfast</th>
-                    <th>After Breakfast</th>
-                    <th>Before Lunch</th>
-                    <th>After Lunch</th>
-                    <th>Before Dinner</th>
-                    <th>After Dinner</th>
-                    <th>Bedtime</th>
+                    <th>Fecha</th>
+                    <th>Tipo</th>
+                    <th>Antes de Desayunar</th>
+                    <th>Después de Desayunar</th>
+                    <th>Antes de Comer</th>
+                    <th>Después de Comer</th>
+                    <th>Antes de Cenar</th>
+                    <th>Después de Cenar</th>
+                    <th>Antes de Dormir</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Repetir N Veces -->
                 <tr>
                     <th rowspan="4">Day 1</th>
-                    <th>Blood Glucose</th>
+                    <th>Nivel de Glucosa</th>
                     <th>x</th>
                     <th>x</th>
                     <th>x</th>
@@ -33,7 +33,7 @@
                     <th>x</th>
                 </tr>
                 <tr>
-                    <th>Ketones</th>
+                    <th>Nivel de Cetonas</th>
                     <th>x</th>
                     <th>x</th>
                     <th>x</th>
@@ -43,7 +43,7 @@
                     <th>x</th>
                 </tr>
                 <tr>
-                    <th>Meds</th>
+                    <th>Medicamentos</th>
                     <th>x</th>
                     <th>x</th>
                     <th>x</th>
@@ -53,7 +53,7 @@
                     <th>x</th>
                 </tr>
                 <tr>
-                    <th>Notes</th>
+                    <th>Notas</th>
                     <th>x</th>
                     <th>x</th>
                     <th>x</th>
