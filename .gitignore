@@ -337,3 +337,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/ProyectoDAI/Web.config
+/ProyectoDAI/Web.Debug.config
+/ProyectoDAI/Web.Release.config
