@@ -4,13 +4,20 @@
     <!-- JavaScript - Function to clone medication entry fields - Start -->
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#addMedication').click(function () {
-                // Clone the first medication entry
-                var medicationEntry = $('.medicationEntry').first().clone();
-                medicationEntry.find('input').val(''); // Clear the input value in the cloned entry
-                $('#medicationContainer').append(medicationEntry);
+        $('#addMedication').click(function () {
+            // Clone the first medication entry
+            var medicationEntry = $('.medicationEntry').first().clone();
+            medicationEntry.find('input').val(''); // Clear the input value in the cloned entry
+            $('#medicationContainer').append(medicationEntry);
+
+            // Update the value of the hidden field
+            var medicationData = [];
+            $('.medicationEntry').each(function () {
+                var medication = $(this).find('select').val();
+                var quantity = $(this).find('input').val();
+                medicationData.push({ medication: medication, quantity: quantity });
             });
+            $('#<%= HiddenField1.ClientID %>').val(JSON.stringify(medicationData));
         });
     </script>
 
@@ -28,9 +35,7 @@
             <div class="col-md-6">
 
                 <!-- Dropdown list for selecting a time -->
-                <asp:DropDownList ID="ddlTime" runat="server" CssClass="form-control" required>
-                    <asp:ListItem Text="Selecciona una hora" Value="" />
-                </asp:DropDownList>
+                <asp:DropDownList ID="ddlTime" runat="server" CssClass="form-control" required></asp:DropDownList>
                 
                 <h3>Glucosa y Cetonas</h3>
                 
@@ -96,14 +101,24 @@
                     <!-- Button to add medication entry -->
                     <button type="button" id="addMedication" class="btn btn-secondary text-black">Agregar Otro Medicamento</button>
 
+                    <!-- Hidden field to save the medications entry -->
+                    <asp:HiddenField ID="HiddenField1" runat="server" />
+
                     <!-- Medications Register - End -->
 
                 </div>
             </div>
         </div>
 
-        <!-- Button to save data -->
-        <asp:Button ID="btnSave" runat="server" Text="Guardar Datos" CssClass="btn btn-primary" OnClick="SaveData_Click" />
+        <div class="error-message-container">
+
+            <!-- Label for displaying error messages -->
+            <asp:Label ID="lblError" runat="server" CssClass="text-danger" Visible="false"></asp:Label>
+
+            <!-- Button to save data -->
+            <asp:Button ID="btnSave" runat="server" Text="Guardar Datos" CssClass="btn btn-primary" OnClick="SaveData_Click" />
+
+        </div>
 
     </div>
 
