@@ -111,6 +111,7 @@
     <Content Include="App\Forum\Default.aspx" />
     <Content Include="App\Medicines\Default.aspx" />
     <Content Include="App\Report\Default.aspx" />
+    <Content Include="App\Report\History.aspx" />
     <Content Include="App\Report\Register.aspx" />
     <Content Include="App\Settings.aspx" />
     <Content Include="App\Tracking\Default.aspx" />
@@ -216,6 +217,13 @@
     </Compile>
     <Compile Include="App\Report\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Report\History.aspx.cs">
+      <DependentUpon>History.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Report\History.aspx.designer.cs">
+      <DependentUpon>History.aspx</DependentUpon>
     </Compile>
     <Compile Include="App\Report\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

@@ -9,6 +9,6 @@
     <div class="jumbotron">
         <h1>Histórico de Datos</h1>
         <p class="lead">Revisa el histórico de tus datos.</p>
-        <p><a href="/APP/Informe/Historico" class="btn btn-primary btn-lg">Ir al Histórico &raquo;</a></p> 
+        <p><a href="/APP/Report/History" class="btn btn-primary btn-lg">Ir al Histórico &raquo;</a></p> 
     </div>
 </asp:Content>
