@@ -8,10 +8,10 @@ INSERT INTO Gender (id, gender) VALUES
 INSERT INTO PartsOfDay (id, part_of_day) VALUES
 (1, 'Antes de Desayunar'),
 (2, 'Después de Desayunar'),
-(3, 'Antes de Comer');
-(4, 'Después de Comer');
-(5, 'Antes de Cenar');
-(6, 'Después de Cenar');
+(3, 'Antes de Comer'),
+(4, 'Después de Comer'),
+(5, 'Antes de Cenar'),
+(6, 'Después de Cenar'),
 (7, 'Antes de Dormir');
 
 -- Insert into HoursOfDay
@@ -47,7 +47,7 @@ INSERT INTO Exercises (id, exercise) VALUES
 (2, 'Nadar'),
 (3, 'Ciclismo'),
 (4, 'Levantamiento de pesas'),
-(5, 'Yoga');
+(5, 'Yoga'),
 (6, 'Pilates'),
 (7, 'Aeróbicos'),
 (8, 'Zumba'),

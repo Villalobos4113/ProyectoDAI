@@ -17,12 +17,7 @@
                 <br />
                 <asp:TextBox ID="txtDateOfBirth" runat="server" TextMode="Date" CssClass="form-control" required></asp:TextBox>
                 <br />
-                <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control" required>
-                    <asp:ListItem Text="Sexo" Value="" />
-                    <asp:ListItem Text="Hombre" Value="Male" />
-                    <asp:ListItem Text="Mujer" Value="Female" />
-                    <asp:ListItem Text="Otro" Value="Other" />
-                </asp:DropDownList>
+                <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control" required></asp:DropDownList>
                 <br />
                 <div class="error-message-container">
                     <asp:Label ID="lblPasswordMismatchError" runat="server" CssClass="text-danger" Visible="false"></asp:Label>
