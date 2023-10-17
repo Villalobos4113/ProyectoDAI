@@ -65,7 +65,7 @@
                         <li class="dropdown">
                             <a class="drodown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cuenta <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a runat="server" href="~/APP/Settings">Ajustes</a></li>
+                                <li><a runat="server" href="~/App/Settings">Ajustes</a></li>
                                 <li><a runat="server" id="logoutLink" onserverclick="Logout_ServerClick">Cerrar Sesión</a></li>
                             </ul>
                         </li>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml;
 
 namespace ProyectoDAI.App
 {
@@ -11,7 +12,7 @@ namespace ProyectoDAI.App
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LiteralWelcomeMessage.Text = $"<h1 class=\"text-white\">Bienvenid@, {Session["user_first_name"]}</h1>";
         }
     }
 }
