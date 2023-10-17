@@ -15,7 +15,14 @@ namespace ProyectoDAI.Auth
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Set_ddlGender();
+            if (Session["user_id"] != null && Session["user_first_name"] != null && Session["user_last_name"] != null)
+            {
+                Response.Redirect("~/App/");
+            }
+            else
+            {
+                Set_ddlGender();
+            }
         }
 
         protected void btnSignUp_Click(object sender, EventArgs e)

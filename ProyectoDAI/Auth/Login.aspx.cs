@@ -16,7 +16,10 @@ namespace ProyectoDAI.Auth
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user_id"] != null && Session["user_first_name"] != null && Session["user_last_name"] != null)
+            {
+                Response.Redirect("~/App/");
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

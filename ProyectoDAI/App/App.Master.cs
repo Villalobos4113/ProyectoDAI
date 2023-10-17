@@ -11,7 +11,10 @@ namespace ProyectoDAI.App
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user_id"] == null || Session["user_first_name"] == null || Session["user_last_name"] == null)
+            {
+                Response.Redirect("~/Auth/Login.aspx");
+            }
         }
 
         protected void Logout_ServerClick(object sender, EventArgs e)
