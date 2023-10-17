@@ -115,6 +115,7 @@
     <Content Include="App\Report\Register.aspx" />
     <Content Include="App\Settings.aspx" />
     <Content Include="App\Tracking\Default.aspx" />
+    <Content Include="App\Tracking\Register.aspx" />
     <Content Include="Auth\Login.aspx" />
     <Content Include="Auth\SignUp.aspx" />
     <Content Include="Contact.aspx" />
@@ -245,6 +246,13 @@
     </Compile>
     <Compile Include="App\Tracking\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Tracking\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Tracking\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">

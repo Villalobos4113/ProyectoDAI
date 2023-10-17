@@ -24,11 +24,11 @@
                 <h3>Glucosa y Cetonas</h3>
                 <div class="form-group">
                     <label for="glucoseLevel">Nivel de Glucosa</label>
-                    <asp:TextBox ID="glucoseLevel" TextMode="Number" CssClass="form-control" Text="Nivel de Glucosa" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="glucoseLevel" TextMode="Number" CssClass="form-control" placeholder="Nivel de Glucosa" runat="server" required></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="ketonesLevel">Nivel de Cetonas</label>
-                    <asp:TextBox ID="ketonesLevel" TextMode="Number" CssClass="form-control" Text="Nivel de Cetonas" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="ketonesLevel" TextMode="Number" CssClass="form-control" placeholder="Nivel de Cetonas" runat="server"></asp:TextBox>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@
                             <asp:DropDownList ID="ddlMedication" runat="server" CssClass="form-control">
                                 <asp:ListItem Text="Selecciona un Medicamento" Value="" />
                             </asp:DropDownList>
-                            <asp:TextBox TextMode="Number" CssClass="form-control" Text="Cantidad" runat="server"></asp:TextBox>
+                            <asp:TextBox TextMode="Number" CssClass="form-control" placeholder="Cantidad" runat="server"></asp:TextBox>
                         </div>
                         <br />
                     </div> 
@@ -53,7 +53,7 @@
         <h2>Notas</h2>
         <div class="form-group">
             <label for="notes">Notas</label>
-            <asp:TextBox ID="notes" TextMode="MultiLine" CssClass="form-control" Text="Agrega notas aquí" runat="server"></asp:TextBox>
+            <asp:TextBox ID="notes" TextMode="MultiLine" CssClass="form-control" Rows="5" placeholder="Agrega notas aquí" runat="server"></asp:TextBox>
         </div>
 
         <asp:Button ID="btnSave" runat="server" Text="Guardar Datos" CssClass="btn btn-primary" OnClick="SaveData_Click" />
