@@ -42,6 +42,8 @@
             </Scripts>
         </asp:ScriptManager>
 
+        <!-- NavBar Start -->
+
         <div class="navbar navbar-inverse navbar-app navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -50,12 +52,20 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+
+                    <!-- NavBar Image Start -->
+
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/App/">
                         <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/full-logo-app.png" CssClass="navbar-brand" />
                     </asp:HyperLink>
+
+                    <!-- NavBar Image End -->
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
+
+                        <!-- NavBar Sections Start -->
+
                         <li><a runat="server" href="~/App/">Inicio</a></li>
                         <li><a runat="server" href="~/App/Report">Informe</a></li>
                         <li><a runat="server" href="~/App/Tracking">Seguimiento</a></li>
@@ -65,22 +75,45 @@
                         <li class="dropdown">
                             <a class="drodown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cuenta <span class="caret"></span></a>
                             <ul class="dropdown-menu">
+
+                                <!-- Account Sections Start -->
+
                                 <li><a runat="server" href="~/App/Settings">Ajustes</a></li>
                                 <li><a runat="server" id="logoutLink" onserverclick="Logout_ServerClick">Cerrar Sesión</a></li>
+
+                                <!-- Account Sections End -->
+
                             </ul>
                         </li>
+
+                        <!-- NavBar Sections End -->
+
                     </ul>
                 </div>
             </div>
         </div>
 
+        <!-- NavBar End -->
+
         <div class="container body-content">
+
+            <!-- App.Master MainContent Start -->
+
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
+
+            <!-- App.Master MainContent End -->
+
             <hr />
+
+            <!-- Footer Start -->
+
             <footer class="text-white">
                 <p>&copy; <%: DateTime.Now.Year %> - Dia Well</p>
             </footer>
+
+            <!-- Footer End -->
+
         </div>
 
     </form>

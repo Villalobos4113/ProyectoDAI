@@ -39,7 +39,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <!-- NavBar Inicio -->
+        <!-- NavBar Start -->
 
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -50,18 +50,18 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <!-- NavBar Imagen Inicio -->
+                    <!-- NavBar Image Start -->
 
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/">
                         <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/full-logo.png" CssClass="navbar-brand" />
                     </asp:HyperLink>
 
-                    <!-- NavBar Imagen Fin -->
+                    <!-- NavBar Image End -->
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
 
-                        <!-- NavBar Secciones Inicio -->
+                        <!-- NavBar Sections Start -->
 
                         <li><a runat="server" href="~/">Inicio</a></li>
                         <li><a runat="server" href="~/About">Sobre la Diabetes</a></li>
@@ -70,37 +70,44 @@
                         <li class="dropdown">
                             <a class="drodown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cuenta <span class="caret"></span></a>
                             <ul class="dropdown-menu">
+
+                                <!-- Account Sections Start -->
+
                                 <li><a runat="server" href="~/Auth/Login">Iniciar sesión</a></li>
                                 <li><a runat="server" href="~/Auth/SignUp">Registrarse</a></li>
+
+                                <!-- Account Sections End -->
+
                             </ul>
                         </li>
 
-                        <!-- NavBar Secciones Fin -->
+                        <!-- NavBar Sections End -->
 
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- NavBar Secciones Fin -->
+        <!-- NavBar End -->
 
         <div class="container body-content">
 
-            <!-- Site.Master MainContent Inicio -->
+            <!-- Site.Master MainContent Start -->
 
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
+
+            <!-- Site.Master MainContent End -->
+
             <hr />
 
-            <!-- Site.Master MainContent Fin -->
-
-            <!-- Footer Inicio -->
+            <!-- Footer Start -->
 
             <footer>
                 <p>Copyright &copy; <%: DateTime.Now.Year %> Dia Well. All rights reserved.</p>
             </footer>
 
-            <!-- Footer Fin -->
+            <!-- Footer End -->
         </div>
 
     </form>

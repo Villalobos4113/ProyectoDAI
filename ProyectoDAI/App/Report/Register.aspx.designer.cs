@@ -42,6 +42,15 @@ namespace ProyectoDAI.App.Report
         protected global::System.Web.UI.WebControls.TextBox ketonesLevel;
 
         /// <summary>
+        /// TextBox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+
+        /// <summary>
         /// ddlMedication control.
         /// </summary>
         /// <remarks>
@@ -49,15 +58,6 @@ namespace ProyectoDAI.App.Report
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlMedication;
-
-        /// <summary>
-        /// notes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox notes;
 
         /// <summary>
         /// btnSave control.

@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="Inicio" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ProyectoDAI._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
+    <!-- App Section Start -->
+
     <div class="jumbotron">
         <h1>Dia Well APP</h1>
         <p class="lead">Inicia sesión o crea una cuenta para empezar a gestionar tu diabetes de manera más sencilla con nuestra aplicación.</p>
@@ -10,7 +13,14 @@
         </p>
     </div>
 
+    <!-- App Section End -->
+
+    <!-- Row Sections Start -->
+
     <div class="row">
+
+        <!-- First Section Start -->
+
         <div class="col-md-4">
             <h2>Sobre la Diabetes</h2>
             <p>
@@ -20,6 +30,11 @@
                 <a class="btn btn-default" href="/About">Más información &raquo;</a>
             </p>
         </div>
+
+        <!-- First Section End -->
+
+        <!-- Second Section Start -->
+
         <div class="col-md-4">
             <h2>Salud y Bienestar</h2>
             <p>
@@ -29,6 +44,11 @@
                 <a class="btn btn-default" href="/Health">Más información &raquo;</a>
             </p>
         </div>
+
+        <!-- Second Section End -->
+
+        <!-- Third Section Start -->
+
         <div class="col-md-4">
             <h2>Nosotros</h2>
             <p>
@@ -38,5 +58,10 @@
                 <a class="btn btn-default" href="/Contact">Conócenos &raquo;</a>
             </p>
         </div>
+
+        <!-- Third Section End -->
     </div>
+
+    <!-- Row Sections End -->
+
 </asp:Content>
