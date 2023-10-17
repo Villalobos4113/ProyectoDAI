@@ -73,15 +73,15 @@ namespace ProyectoDAI.Auth
                 }
                 catch 
                 {
-                    lblPasswordMismatchError.Text = "Error al crear la cuenta.";
-                    lblPasswordMismatchError.Visible = true;
+                    lblError.Text = "Error al crear la cuenta.";
+                    lblError.Visible = true;
                 }
  
             }
             else
             {
-                lblPasswordMismatchError.Text = "Las contraseñas no coinciden. Asegúrese de que ambas contraseñas coincidan.";
-                lblPasswordMismatchError.Visible = true;
+                lblError.Text = "Las contraseñas no coinciden. Asegúrese de que ambas contraseñas coincidan.";
+                lblError.Visible = true;
             }
             
         }

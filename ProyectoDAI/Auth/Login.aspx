@@ -9,7 +9,10 @@
                 <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Email" required></asp:TextBox>
                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control" placeholder="Password" required></asp:TextBox>
                 <br />
-                <asp:Button ID="btnLogin" runat="server" Text="Acceder" CssClass="btn btn-primary" OnClick="btnLogin_Click" />
+                <div class="error-message-container">
+                    <asp:Button ID="btnLogin" runat="server" Text="Acceder" CssClass="btn btn-primary" OnClick="btnLogin_Click" />
+                    <asp:Label ID="lblError" runat="server" CssClass="text-danger" Visible="false"></asp:Label>
+                </div>
                 <br /><br />
                 <p>¿No tienes una cuenta? <asp:HyperLink NavigateUrl="~/Auth/SignUp.aspx" Text="Regístrate" runat="server" /></p>
             </div>
