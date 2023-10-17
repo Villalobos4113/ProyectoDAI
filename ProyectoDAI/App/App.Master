@@ -20,7 +20,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
-<body>
+<body class="bg-app">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -78,7 +78,7 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
+            <footer class="text-white">
                 <p>&copy; <%: DateTime.Now.Year %> - Dia Well</p>
             </footer>
         </div>
