@@ -34,15 +34,21 @@ namespace ProyectoDAI.App.Medicines
 
             OdbcDataReader reader = command.ExecuteReader();
 
+            // Create a DataTable to store the data
+            DataTable dt = new DataTable();
+            dt.Columns.Add("medicine_id");
+            dt.Columns.Add("quantity");
+            dt.Columns.Add("name");
+
             // Create table header
             TableHeaderRow headerRow = new TableHeaderRow();
             TableHeaderCell headerCell1 = new TableHeaderCell();
-            headerCell1.Text = "Nombre";
+            headerCell1.Text = "Medicine Name";
             headerRow.Cells.Add(headerCell1);
             TableHeaderCell headerCell2 = new TableHeaderCell();
-            headerCell2.Text = "Cantidad";
+            headerCell2.Text = "Quantity";
             headerRow.Cells.Add(headerCell2);
-            tblMedicines.Rows.Add(headerRow);
+            tblMedicines.Rows.AddAt(0, headerRow);
 
             if (reader.HasRows)
             {
@@ -61,10 +67,16 @@ namespace ProyectoDAI.App.Medicines
                     newCell2.Text = reader["quantity"].ToString();
                     newRow.Cells.Add(newCell2);
                     tblMedicines.Rows.Add(newRow);
+
+                    // Add data to the DataTable
+                    dt.Rows.Add(reader["medicine_id"], reader["quantity"], reader["name"]);
                 }
             }
 
             con.Close();
+
+            // Save the DataTable to the ViewState
+            ViewState["DataTable"] = dt;
 
             // Add a default "Selecciona una medicina" item at the beginning of the dropdown list
             ddlMedicines.Items.Insert(0, new ListItem("Selecciona una medicina", ""));
@@ -72,12 +84,24 @@ namespace ProyectoDAI.App.Medicines
 
         protected void SaveDataNewQuantity_Click(object sender, EventArgs e)
         {
+            bool verif = false;
 
+
+            if (verif)
+            {
+                Response.Redirect("/App/Medicines");
+            }    
         }
 
         protected void SaveDataNewMedicine_Click(object sender, EventArgs e)
         {
+            bool verif = false;
 
+
+            if (verif)
+            {
+                Response.Redirect("/App/Medicines");
+            }
         }
     }
 }
