@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Odbc;
 using System.Linq;
 using System.Web;
@@ -39,9 +40,6 @@ namespace ProyectoDAI.App.Report
             string ketones = ketonesLevel.Text;
             string notes = TextBox1.Text;
             string part_of_day_id = ddlTime.SelectedValue;
-
-            string reportMedicinesJson = HiddenField1.Value;string selectedTime = ddlTime.SelectedValue;
-            var reportMedicinesData = JsonConvert.DeserializeObject<List<MedicationData>>(reportMedicinesJson);
 
             OdbcConnection con = new ConnectionDB().con;
             OdbcCommand command = new OdbcCommand(queryReportId, con);
@@ -115,7 +113,7 @@ namespace ProyectoDAI.App.Report
 
         protected void Set_ddlMedication()
         {
-            if (ddlMedication.Items.Count == 0)
+            if (ddlMedication1.Items.Count == 0)
             {
                 // SQL query to retrieve medicine data
                 string query = "SELECT UserMedicine.medicine_id, UserMedicine.quantity, Medicine.name FROM UserMedicine INNER JOIN Medicine ON UserMedicine.medicine_id = Medicine.id WHERE UserMedicine.user_id = ?";
@@ -129,17 +127,100 @@ namespace ProyectoDAI.App.Report
 
                 if (reader.HasRows)
                 {
+                    // Load the data into a DataTable
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+
+                    // Store the DataTable in the ViewState
+                    ViewState["DataTable"] = dt;
+
                     // Populate the medicine dropdown list from the database
-                    ddlMedication.DataSource = reader;
-                    ddlMedication.DataTextField = "name";
-                    ddlMedication.DataValueField = "medicine_id";
-                    ddlMedication.DataBind();
+                    ddlMedication1.DataSource = dt;
+                    ddlMedication1.DataTextField = "name";
+                    ddlMedication1.DataValueField = "medicine_id";
+                    ddlMedication1.DataBind();
+
+                    ddlMedication2.DataSource = dt;
+                    ddlMedication2.DataTextField = "name";
+                    ddlMedication2.DataValueField = "medicine_id";
+                    ddlMedication2.DataBind();
+
+                    ddlMedication3.DataSource = dt;
+                    ddlMedication3.DataTextField = "name";
+                    ddlMedication3.DataValueField = "medicine_id";
+                    ddlMedication3.DataBind();
+
+                    ddlMedication4.DataSource = dt;
+                    ddlMedication4.DataTextField = "name";
+                    ddlMedication4.DataValueField = "medicine_id";
+                    ddlMedication4.DataBind();
+
+                    ddlMedication5.DataSource = dt;
+                    ddlMedication5.DataTextField = "name";
+                    ddlMedication5.DataValueField = "medicine_id";
+                    ddlMedication5.DataBind();
                 }
 
                 con.Close();
 
                 // Add a default "Selecciona una medicina" item at the beginning of the dropdown list
-                ddlMedication.Items.Insert(0, new ListItem("Selecciona una medicina", ""));
+                ddlMedication1.Items.Insert(0, new ListItem("Selecciona una medicina", ""));
+                ddlMedication2.Items.Insert(0, new ListItem("Selecciona una medicina", ""));
+                ddlMedication3.Items.Insert(0, new ListItem("Selecciona una medicina", ""));
+                ddlMedication4.Items.Insert(0, new ListItem("Selecciona una medicina", ""));
+                ddlMedication5.Items.Insert(0, new ListItem("Selecciona una medicina", ""));
+            }
+        }
+
+        protected void ddlMedication_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DropDownList ddl = (DropDownList)sender;
+            string selectedMedicineId = ddl.SelectedValue;
+
+            List<string> selectedMedicines = new List<string>
+            {
+                ddlMedication1.SelectedValue,
+                ddlMedication2.SelectedValue,
+                ddlMedication3.SelectedValue,
+                ddlMedication4.SelectedValue,
+                ddlMedication5.SelectedValue
+            };
+
+            int count = selectedMedicines.Count(medicine => medicine == selectedMedicineId);
+
+            if (count > 1)
+            {
+                // Reset the selected value of the dropdown list to the default value
+                ddl.ClearSelection();
+                ddl.SelectedValue = "";
+                ddl.SelectedIndex = 0;
+
+                return;
+            }
+
+            // Retrieve the DataTable from the ViewState
+            DataTable dt = ViewState["DataTable"] as DataTable;
+
+            DataRow[] rows = dt.Select($"medicine_id = '{selectedMedicineId}'");
+            if (rows.Length > 0)
+            {
+                string quantity = rows[0]["quantity"].ToString();
+
+                TextBox txb;
+                if (ddl.ID == "ddlMedication1")
+                    txb = txbMedication1;
+                else if (ddl.ID == "ddlMedication2")
+                    txb = txbMedication2;
+                else if (ddl.ID == "ddlMedication3")
+                    txb = txbMedication3;
+                else if (ddl.ID == "ddlMedication4")
+                    txb = txbMedication4;
+                else // ddl.ID == "ddlMedication5"
+                    txb = txbMedication5;
+
+                txb.Attributes["max"] = quantity;
+                txb.Attributes["min"] = "0";
+                txb.Text = "1";
             }
         }
     }

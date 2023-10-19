@@ -1,38 +1,17 @@
 ﻿<%@ Page Title="Registrar" Language="C#" MasterPageFile="~/App/App.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="ProyectoDAI.App.Report.Register" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <!-- JavaScript - Function to clone medication entry fields - Start -->
-
-    <script type="text/javascript">
-        $('#addMedication').click(function () {
-            // Clone the first medication entry
-            var medicationEntry = $('.medicationEntry').first().clone();
-            medicationEntry.find('input').val(''); // Clear the input value in the cloned entry
-            $('#medicationContainer').append(medicationEntry);
-
-            // Update the value of the hidden field
-            var medicationData = [];
-            $('.medicationEntry').each(function () {
-                var medication = $(this).find('select').val();
-                var quantity = $(this).find('input').val();
-                medicationData.push({ medication: medication, quantity: quantity });
-            });
-            $('#<%= HiddenField1.ClientID %>').val(JSON.stringify(medicationData));
-        });
-    </script>
-
-    <!-- JavaScript End -->
-
     <!-- Form Start -->
 
     <div class="container text-white">
 
         <h1>Informe de Diabetes</h1>
-        <h2>Registrar Datos</h2>
-        <br />
 
         <div class="row">
             <div class="col-md-6">
+
+                <h2>Registrar Datos</h2>
+                <br />
 
                 <!-- Dropdown list for selecting a time -->
                 <asp:DropDownList ID="ddlTime" runat="server" CssClass="form-control" required></asp:DropDownList>
@@ -74,18 +53,19 @@
                 <!-- Medications Register - Start -->
 
                 <h3>Registro de Medicamentos</h3>
+
                 <div class="form-group" id="medicationEntries">
-                    <div id="medicationContainer">
+                    <div>
 
                         <!-- Medication entry fields - Start -->
 
                         <div class="medicationEntry">
 
                             <!-- Dropdown list for selecting a medication -->
-                            <asp:DropDownList ID="ddlMedication" runat="server" CssClass="form-control"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlMedication1" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlMedication_SelectedIndexChanged"></asp:DropDownList>
 
                             <!-- Input for quantity -->
-                            <asp:TextBox TextMode="Number" CssClass="form-control" placeholder="Cantidad" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txbMedication1" TextMode="Number" CssClass="form-control" placeholder="Cantidad" runat="server"></asp:TextBox>
 
                             <br />
 
@@ -94,13 +74,86 @@
                         <!-- Medication entry fields - Start -->
 
                     </div> 
-                    <br />
 
-                    <!-- Button to add medication entry -->
-                    <button type="button" id="addMedication" class="btn btn-secondary text-black">Agregar Otro Medicamento</button>
+                    <div>
 
-                    <!-- Hidden field to save the medications entry -->
-                    <asp:HiddenField ID="HiddenField1" runat="server" />
+                        <!-- Medication entry fields - Start -->
+
+                        <div class="medicationEntry">
+
+                            <!-- Dropdown list for selecting a medication -->
+                            <asp:DropDownList ID="ddlMedication2" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlMedication_SelectedIndexChanged"></asp:DropDownList>
+
+                            <!-- Input for quantity -->
+                            <asp:TextBox ID="txbMedication2" TextMode="Number" CssClass="form-control" placeholder="Cantidad" runat="server"></asp:TextBox>
+
+                            <br />
+
+                        </div>
+
+                        <!-- Medication entry fields - Start -->
+
+                    </div> 
+
+                    <div>
+
+                        <!-- Medication entry fields - Start -->
+
+                        <div class="medicationEntry">
+
+                            <!-- Dropdown list for selecting a medication -->
+                            <asp:DropDownList ID="ddlMedication3" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlMedication_SelectedIndexChanged"></asp:DropDownList>
+
+                            <!-- Input for quantity -->
+                            <asp:TextBox ID="txbMedication3" TextMode="Number" CssClass="form-control" placeholder="Cantidad" runat="server"></asp:TextBox>
+
+                            <br />
+
+                        </div>
+
+                        <!-- Medication entry fields - Start -->
+
+                    </div> 
+
+                    <div>
+
+                        <!-- Medication entry fields - Start -->
+
+                        <div class="medicationEntry">
+
+                            <!-- Dropdown list for selecting a medication -->
+                            <asp:DropDownList ID="ddlMedication4" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlMedication_SelectedIndexChanged"></asp:DropDownList>
+
+                            <!-- Input for quantity -->
+                            <asp:TextBox ID="txbMedication4" TextMode="Number" CssClass="form-control" placeholder="Cantidad" runat="server"></asp:TextBox>
+
+                            <br />
+
+                        </div>
+
+                        <!-- Medication entry fields - Start -->
+
+                    </div> 
+
+                    <div>
+
+                        <!-- Medication entry fields - Start -->
+
+                        <div class="medicationEntry">
+
+                            <!-- Dropdown list for selecting a medication -->
+                            <asp:DropDownList ID="ddlMedication5" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlMedication_SelectedIndexChanged"></asp:DropDownList>
+
+                            <!-- Input for quantity -->
+                            <asp:TextBox ID="txbMedication5" TextMode="Number" CssClass="form-control" placeholder="Cantidad" runat="server"></asp:TextBox>
+
+                            <br />
+
+                        </div>
+
+                        <!-- Medication entry fields - Start -->
+
+                    </div> 
 
                     <!-- Medications Register - End -->
 
