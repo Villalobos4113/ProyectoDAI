@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using static ProyectoDAI.App.Report.Register;
 
 namespace ProyectoDAI.App.Report
 {
@@ -34,12 +35,18 @@ namespace ProyectoDAI.App.Report
             string queryReportId = "SELECT MAX(id) FROM Report";
             string queryReportMedsId = "SELECT MAX(id) FROM ReportMedicines";
 
-            int id;
+            string queryUpdateMedicineQuantity = "UPDATE UserMedicine SET quantity = ? WHERE user_id = ? AND medicine_id = ?";
+
+            int report_id;
             string created_at = DateTime.Now.ToString("MM/dd/yyyy");
             string glucose = glucoseLevel.Text;
             string ketones = ketonesLevel.Text;
             string notes = TextBox1.Text;
             string part_of_day_id = ddlTime.SelectedValue;
+
+            int report_medicines_id;
+            string medicine_id;
+            string quantity;
 
             OdbcConnection con = new ConnectionDB().con;
             OdbcCommand command = new OdbcCommand(queryReportId, con);
@@ -49,18 +56,18 @@ namespace ProyectoDAI.App.Report
 
             try
             {
-                // Retrieve the next available user ID
-                id = reader.GetInt32(0) + 1;
+                // Retrieve the next available report ID
+                report_id = reader.GetInt32(0) + 1;
             }
             catch
             {
-                id = 1;
+                report_id = 1;
             }
 
             command = new OdbcCommand(queryInsertReport, con);
 
             // Add report data parameters to the insert command
-            command.Parameters.AddWithValue("id", id);
+            command.Parameters.AddWithValue("id", report_id);
             command.Parameters.AddWithValue("created_at", created_at);
             command.Parameters.AddWithValue("glucose", glucose);
             command.Parameters.AddWithValue("ketones", ketones);
@@ -70,16 +77,102 @@ namespace ProyectoDAI.App.Report
 
             try
             {
-                // Execute the user insertion
+                // Execute the report insertion
                 command.ExecuteNonQuery();
 
                 verif = true;
             }
-            catch
+            catch (Exception ex)
             {
-                lblError.Text = "Error al crear el informe.";
+                lblError.Text = "Error al crear el informe. Error: " + ex.Message;
                 lblError.Visible = true;
             }
+
+            if (verif)
+            {
+                List<MedicationData> medicationDataList = new List<MedicationData>
+                {
+                new MedicationData { Medication = ddlMedication1.SelectedValue, Quantity = txbMedication1.Text },
+                new MedicationData { Medication = ddlMedication2.SelectedValue, Quantity = txbMedication2.Text },
+                new MedicationData { Medication = ddlMedication3.SelectedValue, Quantity = txbMedication3.Text },
+                new MedicationData { Medication = ddlMedication4.SelectedValue, Quantity = txbMedication4.Text },
+                new MedicationData { Medication = ddlMedication5.SelectedValue, Quantity = txbMedication5.Text }
+                };
+
+                DataTable dt = ViewState["DataTable"] as DataTable;
+
+                foreach (MedicationData medicationData in medicationDataList)
+                {
+                    medicine_id = medicationData.Medication;
+                    quantity = medicationData.Quantity;
+
+                    if (medicine_id != "" && quantity != "0")
+                    {
+                        command = new OdbcCommand(queryReportMedsId, con);
+
+                        reader = command.ExecuteReader();
+
+                        reader.Read();
+
+                        try
+                        {
+                            // Retrieve the next available report medicines ID
+                            report_medicines_id = reader.GetInt32(0) + 1;
+                        }
+                        catch
+                        {
+                            report_medicines_id = 1;
+                        }
+
+                        command = new OdbcCommand(queryInsertReportMeds, con);
+
+                        command.Parameters.AddWithValue("id", report_medicines_id);
+                        command.Parameters.AddWithValue("quantity", quantity);
+                        command.Parameters.AddWithValue("report_id", report_id);
+                        command.Parameters.AddWithValue("medicine_id", medicine_id);
+
+                        try
+                        {
+                            // Execute the report medicines insertion
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            lblError.Text = "Error al crear el registro de medicinas. Por favor no intente volver a enviarlo. Error: " + ex.Message;
+                            lblError.Visible = true;
+
+                            verif = false;
+                        }
+
+                        if (verif)
+                        {
+                            DataRow[] rows = dt.Select($"medicine_id = '{medicine_id}'");
+                            string newQuantity = (int.Parse(rows[0]["quantity"].ToString()) - int.Parse(quantity)).ToString();
+
+                            command = new OdbcCommand(queryUpdateMedicineQuantity, con);
+
+                            command.Parameters.AddWithValue("quantity", newQuantity);
+                            command.Parameters.AddWithValue("user_id", Session["user_id"]);
+                            command.Parameters.AddWithValue("medicine_id", medicine_id);
+
+                            try
+                            {
+                                // Execute the medicine update
+                                command.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                lblError.Text = "Error al actualizar la cantidad de medicinas. Por favor no intente volver a enviarlo. Error: " + ex.Message;
+                                lblError.Visible = true;
+
+                                verif = false;
+                            }
+                        }
+                    }
+                }
+            }
+
+            con.Close();
 
             if (verif)
             {
