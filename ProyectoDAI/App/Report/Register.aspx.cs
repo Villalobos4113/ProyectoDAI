@@ -204,7 +204,8 @@ namespace ProyectoDAI.App.Report
             DataRow[] rows = dt.Select($"medicine_id = '{selectedMedicineId}'");
             if (rows.Length > 0)
             {
-                string quantity = rows[0]["quantity"].ToString();
+                int quantityInt = int.Parse(rows[0]["quantity"].ToString());
+                string quantity =quantityInt.ToString();
 
                 TextBox txb;
                 if (ddl.ID == "ddlMedication1")
@@ -220,7 +221,11 @@ namespace ProyectoDAI.App.Report
 
                 txb.Attributes["max"] = quantity;
                 txb.Attributes["min"] = "0";
-                txb.Text = "1";
+
+                if (quantityInt > 0)
+                    txb.Text = "1";
+                else
+                    txb.Text = "0";
             }
         }
     }
