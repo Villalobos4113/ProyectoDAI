@@ -80,10 +80,10 @@ CREATE TABLE FollowUp (
 );
 
 CREATE TABLE UserMedicine (
-  id INT PRIMARY KEY,
   quantity INT,
-  user_id INT FOREIGN KEY REFERENCES [User](id),
-  medicine_id INT FOREIGN KEY REFERENCES Medicine(id)
+  user_id INT NOT NULL FOREIGN KEY REFERENCES [User](id),
+  medicine_id INT NOT NULL FOREIGN KEY REFERENCES Medicine(id),
+  PRIMARY KEY (user_id, medicine_id)
 );
 
 CREATE TABLE ForumMessage (
