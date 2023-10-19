@@ -21,8 +21,14 @@ namespace ProyectoDAI.App.Report
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Set_ddlTime();
-            Set_ddlMedication();
+            if (!IsPostBack)
+            {
+                glucoseLevel.Attributes["min"] = "0";
+                ketonesLevel.Attributes["min"] = "0";
+
+                Set_ddlTime();
+                Set_ddlMedication();
+            }
         }
 
         protected void SaveData_Click(object sender, EventArgs e)
