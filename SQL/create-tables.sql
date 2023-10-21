@@ -8,11 +8,6 @@ CREATE TABLE PartsOfDay (
   part_of_day VARCHAR(255)
 );
 
-CREATE TABLE HoursOfDay (
-  id INT PRIMARY KEY,
-  hour_of_day VARCHAR(255)
-);
-
 CREATE TABLE Exercises (
   id INT PRIMARY KEY,
   exercise VARCHAR(255)
@@ -67,13 +62,13 @@ CREATE TABLE ReportMedicines (
 CREATE TABLE Tracking (
   id INT PRIMARY KEY,
   created_at DATE,
-  start_hour_id INT FOREIGN KEY REFERENCES HoursOfDay(id),
-  end_hour_id INT FOREIGN KEY REFERENCES HoursOfDay(id),
   exercise_id INT FOREIGN KEY REFERENCES Exercises(id),
   intensity_id INT FOREIGN KEY REFERENCES Intensity(id),
   calories INT,
   notes TEXT,
-  user_id INT FOREIGN KEY REFERENCES [User](id)
+  user_id INT FOREIGN KEY REFERENCES [User](id),
+  start_hour TIME,
+  end_hour TIME
 );
 
 CREATE TABLE FollowUp (
@@ -85,10 +80,10 @@ CREATE TABLE FollowUp (
 );
 
 CREATE TABLE UserMedicine (
-  id INT PRIMARY KEY,
   quantity INT,
-  user_id INT FOREIGN KEY REFERENCES [User](id),
-  medicine_id INT FOREIGN KEY REFERENCES Medicine(id)
+  user_id INT NOT NULL FOREIGN KEY REFERENCES [User](id),
+  medicine_id INT NOT NULL FOREIGN KEY REFERENCES Medicine(id),
+  PRIMARY KEY (user_id, medicine_id)
 );
 
 CREATE TABLE ForumMessage (

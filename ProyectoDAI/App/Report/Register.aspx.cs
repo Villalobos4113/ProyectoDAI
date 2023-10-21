@@ -21,8 +21,14 @@ namespace ProyectoDAI.App.Report
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Set_ddlTime();
-            Set_ddlMedication();
+            if (!IsPostBack)
+            {
+                glucoseLevel.Attributes["min"] = "0";
+                ketonesLevel.Attributes["min"] = "0";
+
+                Set_ddlTime();
+                Set_ddlMedication();
+            }
         }
 
         protected void SaveData_Click(object sender, EventArgs e)
@@ -38,7 +44,7 @@ namespace ProyectoDAI.App.Report
             string queryUpdateMedicineQuantity = "UPDATE UserMedicine SET quantity = ? WHERE user_id = ? AND medicine_id = ?";
 
             int report_id;
-            string created_at = DateTime.Now.ToString("MM/dd/yyyy");
+            string created_at = DateTime.Now.ToString("yyyy-MM-dd");
             string glucose = glucoseLevel.Text;
             string ketones = ketonesLevel.Text;
             string notes = TextBox1.Text;
@@ -176,7 +182,7 @@ namespace ProyectoDAI.App.Report
 
             if (verif)
             {
-                Response.Redirect("/App/Report/Register");
+                Response.Redirect("/App/Report/History");
             }
         }
 
@@ -185,17 +191,23 @@ namespace ProyectoDAI.App.Report
             if (ddlTime.Items.Count == 0)
             {
                 // SQL query to retrieve part_of_day data
-                string query = "SELECT * FROM PartsOfDay";
+                string query = "SELECT * FROM PartsOfDay WHERE id NOT IN (SELECT part_of_day_id FROM Report WHERE user_id = ? AND created_at = ?);";
 
                 OdbcConnection con = new ConnectionDB().con;
                 OdbcCommand command = new OdbcCommand(query, con);
+
+                command.Parameters.AddWithValue("id", Session["user_id"]);
+                command.Parameters.AddWithValue("created_at", DateTime.Now.ToString("yyyy-MM-dd"));
+
                 OdbcDataReader reader = command.ExecuteReader();
 
-                // Populate the time dropdown list from the database
-                ddlTime.DataSource = reader;
-                ddlTime.DataTextField = "part_of_day";
-                ddlTime.DataValueField = "id";
-                ddlTime.DataBind();
+                if (reader.HasRows) { 
+                    // Populate the time dropdown list from the database
+                    ddlTime.DataSource = reader;
+                    ddlTime.DataTextField = "part_of_day";
+                    ddlTime.DataValueField = "id";
+                    ddlTime.DataBind();
+                }
 
                 con.Close();
 
