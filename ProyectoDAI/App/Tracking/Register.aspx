@@ -7,27 +7,23 @@
         <h2>Registrar Datos</h2>
         <br />
 
-        <!-- Dropdown for Selecting Start Time - Start -->
+        <!-- TextBox for Selecting Start Time - Start -->
 
         <div class="form-group">
-            <label for="ddlStartTime">Hora de Inicio</label>
-            <asp:DropDownList ID="ddlStartTime" runat="server" CssClass="form-control" required>
-                <asp:ListItem Text="Selecciona la hora de inicio" Value="" />
-            </asp:DropDownList>
+            <label for="txbStartTime">Hora de Inicio</label>
+            <asp:TextBox ID="txbStartTime" runat="server" CssClass="form-control" required TextMode="Time"></asp:TextBox>
         </div>
 
-        <!-- Dropdown for Selecting Start Time - End -->
+        <!-- TextBox for Selecting Start Time - End -->
         
-        <!-- Dropdown for Selecting End Time - Start -->
+        <!-- TextBox for Selecting End Time - Start -->
 
         <div class="form-group">
-            <label for="ddlEndTime">Hora de Fin</label>
-            <asp:DropDownList ID="ddlEndTime" runat="server" CssClass="form-control" required>
-                <asp:ListItem Text="Selecciona la hora de fin" Value="" />
-            </asp:DropDownList>
+            <label for="txbEndTime">Hora de Fin</label>
+            <asp:TextBox ID="txbEndTime" runat="server" CssClass="form-control" required TextMode="Time"></asp:TextBox>
         </div>
 
-        <!-- Dropdown for Selecting End Time - End -->
+        <!-- TextBox for Selecting End Time - End -->
 
         <!-- Dropdown for Selecting Exercise Type - Start -->
 

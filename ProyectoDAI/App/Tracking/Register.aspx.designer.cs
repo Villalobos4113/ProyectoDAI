@@ -15,22 +15,22 @@ namespace ProyectoDAI.App.Tracking
     {
 
         /// <summary>
-        /// ddlStartTime control.
+        /// txbStartTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlStartTime;
+        protected global::System.Web.UI.WebControls.TextBox txbStartTime;
 
         /// <summary>
-        /// ddlEndTime control.
+        /// txbEndTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEndTime;
+        protected global::System.Web.UI.WebControls.TextBox txbEndTime;
 
         /// <summary>
         /// ddlExerciseType control.
