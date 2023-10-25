@@ -5,31 +5,17 @@
         <h1>Historial Seguimiento de Ejercicio</h1>
         <br />
 
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Hora de Inicio</th>
-                    <th>Hora de Fin</th>
-                    <th>Ejercicio</th>
-                    <th>Intensidad</th>
-                    <th>Calorias</th>
-                    <th>Notas</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Repetir N Veces -->
-                <tr>
-                    <th>Day 1</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                </tr>
-                <!-- Repetir N Veces -->
-            </tbody>
-        </table>
+        <asp:Table ID="tblHistory" runat="server" CssClass="table table-bordered">
+            <asp:TableHeaderRow>
+                <asp:TableHeaderCell>Fecha</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Hora de Inicio</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Hora de Fin</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Ejercicio</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Intensidad</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Calorías</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Notas</asp:TableHeaderCell>
+            </asp:TableHeaderRow>
+        </asp:Table>
+
     </div>
 </asp:Content>

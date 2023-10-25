@@ -64,6 +64,7 @@
         <!-- Input for Adding Exercise Notes - End -->
 
         <!-- Button to Save Data - Start -->
+        <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
         <asp:Button ID="btnSave" runat="server" Text="Guardar Datos" CssClass="btn btn-primary" OnClick="SaveData_Click" />
 
     </div>
