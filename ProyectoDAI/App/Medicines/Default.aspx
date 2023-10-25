@@ -24,7 +24,7 @@
                 <div class="error-message-container">
 
                     <!-- Label for displaying error messages -->
-                    <asp:Label ID="Label1" runat="server" CssClass="text-danger" Visible="false"></asp:Label>
+                    <asp:Label ID="lblError1" runat="server" CssClass="text-danger" Visible="false"></asp:Label>
 
                     <!-- Button to save data -->
                     <asp:Button ID="btnSaveAddQuantity" runat="server" Text="Añadir Medicamentos" CssClass="btn btn-primary" OnClick="SaveDataNewQuantity_Click" ValidationGroup="AddMedicine" />
@@ -36,13 +36,14 @@
             <div class="container col-md-6">
 
                 <h3>Añade un Nuevo Medicamento</h3>
-                <asp:TextBox ID="txbNewMedicine" CssClass="form-control" placeholder="Nombre del medicamento" runat="server" ValidationGroup="NewMedicine"></asp:TextBox>
+                <asp:DropDownList ID="ddlNewMedicine" CssClass="form-control" runat="server" ValidationGroup="NewMedicine"></asp:DropDownList>
+                <asp:TextBox ID="txbNewMedicine" CssClass="form-control" placeholder="O añade un nuevo medicamento" runat="server" ValidationGroup="NewMedicine"></asp:TextBox>
                 <asp:TextBox ID="txbNewQuantity" TextMode="Number" CssClass="form-control" placeholder="Cantidad" runat="server" ValidationGroup="NewMedicine"></asp:TextBox>
                 <br />
                 <div class="error-message-container">
 
                     <!-- Label for displaying error messages -->
-                    <asp:Label ID="lblError" runat="server" CssClass="text-danger" Visible="false"></asp:Label>
+                    <asp:Label ID="lblError2" runat="server" CssClass="text-danger" Visible="false"></asp:Label>
 
                     <!-- Button to save data -->
                     <asp:Button ID="btnSaveNewMedicine" runat="server" Text="Agregar Medicamento" CssClass="btn btn-primary" OnClick="SaveDataNewMedicine_Click" ValidationGroup="NewMedicine" />

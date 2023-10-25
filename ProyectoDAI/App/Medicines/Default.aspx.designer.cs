@@ -42,13 +42,13 @@ namespace ProyectoDAI.App.Medicines
         protected global::System.Web.UI.WebControls.TextBox txbQuantity;
 
         /// <summary>
-        /// Label1 control.
+        /// lblError1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblError1;
 
         /// <summary>
         /// btnSaveAddQuantity control.
@@ -58,6 +58,15 @@ namespace ProyectoDAI.App.Medicines
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSaveAddQuantity;
+
+        /// <summary>
+        /// ddlNewMedicine control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlNewMedicine;
 
         /// <summary>
         /// txbNewMedicine control.
@@ -78,13 +87,13 @@ namespace ProyectoDAI.App.Medicines
         protected global::System.Web.UI.WebControls.TextBox txbNewQuantity;
 
         /// <summary>
-        /// lblError control.
+        /// lblError2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
+        protected global::System.Web.UI.WebControls.Label lblError2;
 
         /// <summary>
         /// btnSaveNewMedicine control.
