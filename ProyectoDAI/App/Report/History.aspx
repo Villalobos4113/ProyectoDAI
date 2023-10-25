@@ -5,65 +5,16 @@
         <h1>Historial Informe de Diabetes</h1>
         <br />
 
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Tipo</th>
-                    <th>Antes de Desayunar</th>
-                    <th>Después de Desayunar</th>
-                    <th>Antes de Comer</th>
-                    <th>Después de Comer</th>
-                    <th>Antes de Cenar</th>
-                    <th>Después de Cenar</th>
-                    <th>Antes de Dormir</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Repetir N Veces -->
-                <tr>
-                    <th rowspan="4">Day 1</th>
-                    <th>Nivel de Glucosa</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                </tr>
-                <tr>
-                    <th>Nivel de Cetonas</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                </tr>
-                <tr>
-                    <th>Medicamentos</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                </tr>
-                <tr>
-                    <th>Notas</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                    <th>x</th>
-                </tr>
-                <!-- Repetir N Veces -->
-            </tbody>
-        </table>
+        <asp:Table ID="tblHistory" runat="server" CssClass="table table-bordered">
+            <asp:TableHeaderRow>
+                <asp:TableHeaderCell>Fecha</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Hora</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Nivel de Glucosa</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Nivel de Cetonas</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Notas</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Medicamentos</asp:TableHeaderCell>
+            </asp:TableHeaderRow>
+        </asp:Table>
+
     </div>
 </asp:Content>
