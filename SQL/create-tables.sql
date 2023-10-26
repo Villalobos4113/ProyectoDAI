@@ -98,3 +98,9 @@ CREATE TABLE UserDoctor (
   doctor_id INT FOREIGN KEY REFERENCES Doctor(id),
   PRIMARY KEY (user_id, doctor_id)
 );
+
+CREATE TABLE Admin (
+  id INT PRIMARY KEY,
+  username VARCHAR(255) UNIQUE,
+  password VARCHAR(255)
+);

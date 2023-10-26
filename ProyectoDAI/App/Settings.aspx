@@ -37,7 +37,7 @@
             </div>
 
             <asp:Label ID="lblMessage1" runat="server" Text=""></asp:Label>
-            <asp:Button ID="btnUpdateInfo" runat="server" Text="Update Information" OnClick="btnUpdateInfo_Click" CssClass="btn btn-primary" />
+            <asp:Button ID="btnUpdateInfo" runat="server" Text="Actualizar Información" OnClick="btnUpdateInfo_Click" CssClass="btn btn-primary" />
         </div>
 
         <hr />
@@ -73,7 +73,7 @@
             </div>
 
             <asp:Label ID="lblMessage2" runat="server" Text=""></asp:Label>
-            <asp:Button ID="btnChangePassword" runat="server" Text="Change Password" OnClick="btnChangePassword_Click" CssClass="btn btn-primary" />
+            <asp:Button ID="btnChangePassword" runat="server" Text="Cambiar Contraseña" OnClick="btnChangePassword_Click" CssClass="btn btn-primary" />
         </div>
 
     </div>
