@@ -57,6 +57,22 @@ namespace ProyectoDAI.Admin.Report
                 {
                     query = "SELECT Report.id as 'ID', Report.created_at as 'Fecha', Report.glucose as 'Glucosa', Report.ketones as 'Cetonas', Report.notes as 'Notas', [User].email as 'Usuario', PartsOfDay.part_of_day as 'Parte del día' FROM Report INNER JOIN [User] ON Report.user_id = [User].id INNER JOIN PartsOfDay ON Report.part_of_day_id = PartsOfDay.id";
                 }
+                else if (selectedTable == "ReportMedicines")
+                {
+                    query = "SELECT ReportMedicines.id as 'ID', Medicine.name as 'Medicina', ReportMedicines.quantity as 'Cantidad', ReportMedicines.report_id as 'ID Reporte' FROM ReportMedicines INNER JOIN Medicine ON ReportMedicines.medicine_id = Medicine.id";
+                }
+                else if (selectedTable == "Tracking")
+                {
+                    query = "SELECT Tracking.id as 'ID', Tracking.created_at as 'Fecha', Exercises.exercise as 'Ejercicio', Intensity.intensity as 'Intensidad', Tracking.calories as 'Calorías', Tracking.notes as 'Notas', [User].email as 'Usuario', CAST(Tracking.start_hour AS VARCHAR(8)) as 'Hora de Inicio', CAST(Tracking.end_hour AS VARCHAR(8)) as 'Hora de Fin' FROM Tracking INNER JOIN [User] ON Tracking.user_id = [User].id INNER JOIN Exercises ON Tracking.exercise_id = Exercises.id INNER JOIN Intensity ON Tracking.intensity_id = Intensity.id";
+                }
+                else if (selectedTable == "UserMedicine")
+                {
+                    query = "SELECT Medicine.name as 'Medicina', UserMedicine.quantity as 'Cantidad', [User].email as 'Usuario' FROM UserMedicine INNER JOIN Medicine ON UserMedicine.medicine_id = Medicine.id INNER JOIN [User] ON UserMedicine.user_id = [User].id";
+                }
+                else if (selectedTable == "ForumMessage")
+                {
+                    query = "SELECT ForumMessage.id as 'ID', ForumMessage.message as 'Mensaje', ForumMessage.created_at as 'Fecha', [User].email as 'Usuario' FROM ForumMessage INNER JOIN [User] ON ForumMessage.user_id = [User].id";
+                }
                 else
                 {
                     query = "SELECT * FROM " + selectedTable;
@@ -74,7 +90,13 @@ namespace ProyectoDAI.Admin.Report
                 gvData.DataSource = dt;
                 gvData.DataBind();
 
+                con.Close();
             }
+        }
+
+        protected void btnFilter_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

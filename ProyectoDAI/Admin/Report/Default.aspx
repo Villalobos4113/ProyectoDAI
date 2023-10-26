@@ -16,14 +16,11 @@
                 <asp:ListItem>Intensity</asp:ListItem>
                 <asp:ListItem>Medicine</asp:ListItem>
                 <asp:ListItem>User</asp:ListItem>
-                <asp:ListItem>Doctor</asp:ListItem>
                 <asp:ListItem>Report</asp:ListItem>
                 <asp:ListItem>ReportMedicines</asp:ListItem>
                 <asp:ListItem>Tracking</asp:ListItem>
-                <asp:ListItem>FollowUp</asp:ListItem>
                 <asp:ListItem>UserMedicine</asp:ListItem>
                 <asp:ListItem>ForumMessage</asp:ListItem>
-                <asp:ListItem>UserDoctor</asp:ListItem>
             </asp:DropDownList>
         </div>
 
