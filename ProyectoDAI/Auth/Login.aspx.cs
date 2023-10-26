@@ -14,9 +14,9 @@ namespace ProyectoDAI.Auth
             // ==============================================
 
             // Delete before deploying
-            Session.Add("user_id", 1);
-            Session.Add("user_first_name", "Dev");
-            Session.Add("user_last_name", "Dev");
+            // Session.Add("user_id", 1);
+            // Session.Add("user_first_name", "Dev");
+            // Session.Add("user_last_name", "Dev");
 
             // ==============================================
             // ==================WARNING=====================
@@ -54,7 +54,7 @@ namespace ProyectoDAI.Auth
                 reader.Read();
 
                 // Set a session timeout and store user information in session variables
-                Session.Timeout = 10;
+                Session.Timeout = 30;
                 Session.Add("user_id", reader.GetInt32(0));
                 Session.Add("user_first_name", reader.GetString(1));
                 Session.Add("user_last_name", reader.GetString(2));

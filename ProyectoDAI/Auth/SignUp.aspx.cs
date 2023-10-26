@@ -77,7 +77,7 @@ namespace ProyectoDAI.Auth
                     command.ExecuteNonQuery();
 
                     // Set session timeout and store user information in session variables
-                    Session.Timeout = 10;
+                    Session.Timeout = 30;
                     Session.Add("user_id", id);
                     Session.Add("user_first_name", first_name);
                     Session.Add("user_last_name", last_name);
