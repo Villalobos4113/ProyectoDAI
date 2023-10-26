@@ -24,6 +24,11 @@
             </asp:DropDownList>
         </div>
 
+        <br />
+        
+        <asp:Label ID="lblUser" runat="server" Text="Usuario" Visible="false"></asp:Label>
+        <asp:DropDownList ID="ddlUsers" runat="server" CssClass="form-control" Visible="false" OnSelectedIndexChanged="ddlUsers_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+
         <br /><br />
 
         <asp:GridView ID="gvData" runat="server" CssClass="table table-bordered">
