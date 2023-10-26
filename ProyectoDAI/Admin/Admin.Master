@@ -55,7 +55,7 @@
 
                     <!-- NavBar Image Start -->
 
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/App/">
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/">
                         <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/full-logo-admin.png" CssClass="navbar-brand" />
                     </asp:HyperLink>
 
@@ -66,7 +66,9 @@
 
                         <!-- NavBar Sections Start -->
 
-                        <li><a runat="server" href="~/App/">Inicio</a></li>
+                        <li><a runat="server" href="~/Admin/">Inicio</a></li>
+                        <li><a runat="server" href="~/Admin/Report">Reporte</a></li>
+                        <li><a runat="server" href="~/Admin/Catalog">Catalogo</a></li>
                         <li><a runat="server" id="A1" onserverclick="Logout_ServerClick">Cerrar Sesión</a></li>
 
                         <!-- NavBar Sections End -->
