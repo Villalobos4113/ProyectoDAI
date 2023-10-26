@@ -19,8 +19,8 @@ namespace ProyectoDAI.Auth
             // ==============================================
 
             // Delete before deploying
-            Session.Add("admin_id", 1);
-            Session.Add("admin_username", "papichulo");
+            // Session.Add("admin_id", 1);
+            // Session.Add("admin_username", "Villalobos4113");
 
             // ==============================================
             // ==================WARNING=====================
