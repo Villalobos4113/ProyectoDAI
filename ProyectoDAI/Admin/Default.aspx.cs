@@ -11,7 +11,9 @@ namespace ProyectoDAI.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Retrieve the user's first name from Session and display welcome message
 
+            LiteralWelcomeMessage.Text = $"<h1 class=\"text-white\">Bienvenid@ Administrador, {Session["admin_username"]}</h1>";
         }
     }
 }
