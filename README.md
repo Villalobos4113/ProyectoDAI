@@ -6,6 +6,11 @@ ProyectoDAI es un proyecto de aplicación web desarrollado en ASP.NET (.NET Fram
 - Valeria Maqueda
 - Fernando Villalobos
 
+## Links de interés
+- [Pitch](https://youtu.be/L9r0cd3uIPs?si=HvP56NkWBndEOW75)
+- [GitHub](https://github.com/Villalobos4113/ProyectoDAI)
+- [Deployment](https://daiwell.fvb.one)
+
 ## Flujo de trabajo en Git
 
 Para garantizar una colaboración fluida y prevenir cualquier conflicto, por favor sigue el flujo de trabajo en Git detallado a continuación:
