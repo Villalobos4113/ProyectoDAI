@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="ProyectoDAI.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Dia Well - Admin</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/Images/favicon-app.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/custom.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body class="bg-app">
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <!-- NavBar Start -->
+
+        <div class="navbar navbar-inverse navbar-app navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <!-- NavBar Image Start -->
+
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/App/">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/full-logo-admin.png" CssClass="navbar-brand" />
+                    </asp:HyperLink>
+
+                    <!-- NavBar Image End -->
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <!-- NavBar Sections Start -->
+
+                        <li><a runat="server" href="~/App/">Inicio</a></li>
+                        <li><a runat="server" id="A1" onserverclick="Logout_ServerClick">Cerrar Sesión</a></li>
+
+                        <!-- NavBar Sections End -->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- NavBar End -->
+
+        <div class="container body-content">
+
+            <!-- App.Master MainContent Start -->
+
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <!-- App.Master MainContent End -->
+
+            <hr />
+
+            <!-- Footer Start -->
+
+            <footer class="text-white">
+                <p>Copyright &copy; <%: DateTime.Now.Year %> Dia Well. All rights reserved.</p>
+            </footer>
+
+            <!-- Footer End -->
+
+        </div>
+
+    </form>
+</body>
+</html>
