@@ -13,7 +13,10 @@ namespace ProyectoDAI.Admin
         {
             // If Session not started or abandoned redirect to Login page
 
-            
+            if (Session["admin_id"] == null || Session["admin_username"] == null)
+            {
+                Response.Redirect("~/Auth/LoginAdmin.aspx");
+            }
         }
 
         protected void Logout_ServerClick(object sender, EventArgs e)
@@ -25,7 +28,7 @@ namespace ProyectoDAI.Admin
 
             // Redirect to Login page
 
-            Response.Redirect("~/Auth/Login.aspx");
+            Response.Redirect("~/Auth/LoginAdmin.aspx");
         }
     }
 }
