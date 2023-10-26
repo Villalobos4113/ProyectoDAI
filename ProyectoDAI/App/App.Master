@@ -109,7 +109,7 @@
             <!-- Footer Start -->
 
             <footer class="text-white">
-                <p>&copy; <%: DateTime.Now.Year %> - Dia Well</p>
+                <p>Copyright &copy; <%: DateTime.Now.Year %> Dia Well. All rights reserved.</p>
             </footer>
 
             <!-- Footer End -->
