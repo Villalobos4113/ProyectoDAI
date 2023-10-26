@@ -44,10 +44,10 @@ namespace ProyectoDAI.App.Medicines
             // Create table header
             TableHeaderRow headerRow = new TableHeaderRow();
             TableHeaderCell headerCell1 = new TableHeaderCell();
-            headerCell1.Text = "Medicine Name";
+            headerCell1.Text = "Medicamento";
             headerRow.Cells.Add(headerCell1);
             TableHeaderCell headerCell2 = new TableHeaderCell();
-            headerCell2.Text = "Quantity";
+            headerCell2.Text = "Cantidad";
             headerRow.Cells.Add(headerCell2);
             tblMedicines.Rows.AddAt(0, headerRow);
 
@@ -96,8 +96,8 @@ namespace ProyectoDAI.App.Medicines
             ViewState["DataTable"] = dt;
 
             // Add a default "Selecciona una medicina" item at the beginning of the dropdown list
-            ddlMedicines.Items.Insert(0, new ListItem("Selecciona una medicina", ""));
-            ddlNewMedicine.Items.Insert(0, new ListItem("Selecciona una medicina", ""));
+            ddlMedicines.Items.Insert(0, new ListItem("Selecciona un medicamento", ""));
+            ddlNewMedicine.Items.Insert(0, new ListItem("Selecciona un medicamento", ""));
         }
 
         protected void SaveDataNewQuantity_Click(object sender, EventArgs e)
